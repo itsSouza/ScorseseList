@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="a131919">#131919</color>
+    <color name="cinza">#5c6262</color>
 </resources>

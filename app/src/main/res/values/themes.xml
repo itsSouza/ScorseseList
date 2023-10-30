@@ -2,8 +2,16 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.ScorseseList" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-       <item name="colorPrimary">@android:color/darker_gray</item>
+       <item name="colorPrimary">@color/cinza</item>
     </style>
 
     <style name="Theme.ScorseseList" parent="Base.Theme.ScorseseList" />
+    
+    <style name="Theme.SplashScreen.IconBackground" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="statusBarBackground">@color/a131919</item>
+        <item name="android:windowBackground">@drawable/splash_bg</item>
+
+
+    </style>
 </resources>

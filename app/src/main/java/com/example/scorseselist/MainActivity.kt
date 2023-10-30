@@ -2,11 +2,13 @@ package com.example.scorseselist
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.scorseselist.adapter.MovieAdapter
 import com.example.scorseselist.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var movieAdapter: MovieAdapter
@@ -15,7 +17,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        setTheme(R.style.Theme_ScorseseList)
         setContentView(binding.root)
+
+
 
 
         val recyclerViewMovie = binding.recyclerMain
@@ -24,6 +29,18 @@ class MainActivity : AppCompatActivity() {
         movieAdapter = MovieAdapter(this, movieList)
         recyclerViewMovie.adapter = movieAdapter
         getMovie()
+
+        binding.fab.setOnClickListener(this)
+        binding.recyclerMain.setOnClickListener(this)
+    }
+
+    override fun onClick(view: View) {
+        if (view.id == R.id.fab){
+
+            Toast.makeText(this, "Clicado", Toast.LENGTH_SHORT).show()
+        }else if (view.id == R.id.container_img){
+            Toast.makeText(this, "Clicado", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun getMovie(){
@@ -44,5 +61,7 @@ class MainActivity : AppCompatActivity() {
         movieList.add(movie5)
 
     }
+
+
 
 }
