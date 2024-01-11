@@ -1,5 +1,6 @@
 package com.example.scorseselist
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -36,8 +37,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(view: View) {
         if (view.id == R.id.fab){
-
-            Toast.makeText(this, "Clicado", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, MoviesActivity::class.java)
+            startActivity(intent)
         }else if (view.id == R.id.container_img){
             Toast.makeText(this, "Clicado", Toast.LENGTH_SHORT).show()
         }
@@ -59,6 +60,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val movie5 = Movie(imgMovie = R.drawable.thewolfofwallstreet)
         movieList.add(movie5)
+
 
     }
 
